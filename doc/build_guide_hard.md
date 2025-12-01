@@ -28,12 +28,15 @@
 ### ご自身で購入いただくもの(リンクは例です。)
 | ご自身で手配いただくもの    | 個数            | 例(参考リンク) |
 | :-------------------------- | :-------------- | :-------------- |
-| 表面実装ダイオード(1N4148W) | 9個             | https://shop.yushakobo.jp/products/a0800di-02-100?variant=37665574420641 |
+| 表面実装ダイオード(1N4148W) | 112個             | https://shop.yushakobo.jp/products/a0800di-02-100?variant=37665574420641 |
 | タクトスイッチ<br>(6x6x5mm 2pin)| 18個             | https://shop.yushakobo.jp/products/a0800ts-02-1 |
 | ホットスワップ<br>(MX用orロープロファイル)|最大58個| https://shop.yushakobo.jp/products/a01ps?variant=37665172521121 |
 | キースイッチ<br>(MX互換orロープロファイル)|最大58個| ※ロープロファイルは未対応です。 |
 | ロータリーエンコーダ<br>(軸形状:Dカット、高さ20mm)| 任意(おすすめ2個) | https://shop.yushakobo.jp/products/3762?variant=42672275292391 |
 | リチウムイオンバッテリ<br>(※無線にする際の構成例)<br>21.8mm(横) x 40mm(縦) x 8.4mm(厚さ)より一回り小さいもの| 2個(左右1個ずつ)            | 以下は入ること確認済みです。<br>・EEMBリチウムポリマー電池 3.7V 300 mAh<br>https://www.amazon.co.jp/dp/B09DPPP8ZV?ref_=chk_typ_imgToDp<br>・EEMB リチウムポリマーバッテリー 3.7V 250mAh<br>https://www.amazon.co.jp/dp/B08FD3V6TF?psc=1&smid=A6AC39XNLAVZ4&ref_=chk_typ_imgToDp |
+
+※小さい部品などは少し多めに調達しておくと良いです。  
+  ミスしたときに再度買うとなると送料もかかってしまうので。
 
 ![](./build_guide_image/)
 
