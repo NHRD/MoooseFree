@@ -4,14 +4,14 @@
 以下にファイルを置きます。  
 https://github.com/ataruno/MoooseFree/tree/main/firmware
 
-25/12/05時点の最新はGithub Actions#27
-https://github.com/ataruno/MoooseFree/tree/main/firmware/MoooseFree_firmware_%2327
+25/12/07時点の最新はGithub Actions#32
+https://github.com/ataruno/MoooseFree/tree/main/firmware/MoooseFree_firmware_32
 
 各ファイルの解説です。  
 * 右手に書き込むのは"MoooseFree_right-seeeduino_xiao_ble-zmk.uf2"
 * 左手に書き込むのは"MoooseFree_left-seeeduino_xiao_ble-zmk.uf2"
 * マイコンをいったん初期状態に戻すときは"settings_reset-seeeduino_xiao_ble-zmk.uf2"
-* 上記3つのファイルが入っているのが.zipファイル(MoooseFree_firmware_#27.zip)
+* 上記3つのファイルが入っているのが.zipファイル(MoooseFree_firmware_#xx.zip)
 ![](build_guide_soft/2025-12-05-19-42-53.png)
 
 ## ソフト書き込み
@@ -63,13 +63,6 @@ USB接続した状態で電源スイッチをONするとバッテリーに充電
 
 Bluetooth接続の仕方は後述の[Bluetooth接続の仕方](#bluetooth接続の仕方)を確認ください。  
 
-### Bluetooth接続状態
-青：接続状態  
-黄：ペアリング待ち状態  
-赤：未接続状態  
-
-Bluetooth接続の仕方は後述の[Bluetooth接続の仕方](#bluetooth接続の仕方)を確認ください。  
-
 ## キーマップ
 キーマップ変更方法は2種類あります。  
 主にZMK Studioを使用する場合をメインに説明します。
@@ -87,27 +80,29 @@ ZMK studioでの設定を横に乗せています。
 ![](build_guide_soft/デフォルトレイヤー0.png)
 
 レイヤーの構成は以下のイメージで作ってみました。
-* レイヤー0...デフォルトのマウス操作
-* レイヤー1...
-* レイヤー2...
-* レイヤー3...
-* レイヤー4...
+* レイヤー0 ... デフォルトのマウス操作
+* レイヤー1 ... 矢印キーレイヤーキー ※1
+* レイヤー2 ... 左手：ウインドウ位置変更、右手：数字キー レイヤー
+* レイヤー3 ... F15～F24(AutoHotKey)レイヤー ※2
+* レイヤー4 ... ファンクションキーなど
+
+※1：オリジナルキーが右手の一部に設定されています。  
+![](build_guide_soft/2025-12-07-20-37-45.png)
+* my_sq ... シャープ#が入力されます。
+* my_dq ... ダブルクォーテーション2つ""が入力されます。
+* my_sq ... シングルクォーテーション2つ''が入力されます。
+* my_kakko ... 括弧()が入力されます。
 
 #### 固定のもの(=ZMK studioでは変更不可のもの)
 ロータリーエンコーダの回転  
-* レイヤー0...スクロールダウン/スクロールアップ  
-* レイヤー1...
-* レイヤー2...
-* レイヤー3...
-* レイヤー4...
+* レイヤー0,1,2 ... スクロールダウン/スクロールアップ  
+* レイヤー3,4 ... 音量アップ/ダウン  
 
 トラックボール操作の挙動  
 レイヤーキーを押しながら操作するとカーソル操作とかできます。  
-* レイヤー0...
-* レイヤー1...
-* レイヤー2...
-* レイヤー3...
-* レイヤー4...
+* レイヤー0 ... 通常操作
+* レイヤー1,2 ... 細かな操作モード
+* レイヤー3,4 ... スクロール操作モード
 
 ### (1) ZMK Studioを使用する更新方法  
 USB接続した上で https://zmk.studio にアクセスしてください。  
@@ -115,16 +110,16 @@ USB接続した上で https://zmk.studio にアクセスしてください。
 
 「USB」をクリックするとポップアップが表示されます。  
 MoooseFreeを選択し、"接続"をクリックしてください。  
-![](build_guide_soft/ZMK02.png)
+![](build_guide_soft/2025-12-07-20-33-47.png)
 
 設定画面が表示されます。レイヤーは0～4の5つです。  
-![](build_guide_soft/ZMK03.png)
+![](build_guide_soft/2025-12-07-20-34-28.png)
 
 何も設定されていない空白のように見えますが、クリックしてみると実は設定されていることがわかります。  
 下の画像では"Mouse Key Press"の"MB1"、つまり左クリックが設定されています。  
 このBehaviorについては[ZMKのドキュメント(Behaviors)](https://zmk.dev/docs/keymaps/behaviors)をご確認ください。  
 例えば文字入力の設定をしたい場合は[KeyBoardのページ](https://zmk.dev/docs/keymaps/list-of-keycodes#keyboard)です。  
-![](build_guide_soft/ZMK04.png)
+![](build_guide_soft/2025-12-07-20-34-57.png)
 
 「Behaviorでカテゴリを選択し、そのカテゴリ内の設定値を指定する」だと伝わりやすいでしょうか。  
 ![](build_guide_soft/ZMK05.png)
@@ -134,30 +129,29 @@ MoooseFreeを選択し、"接続"をクリックしてください。
 
 "押している間レイヤーを切換える設定"もあります。  
 Behaviorの"LAYER_TAP_TO_0"ですと、長押し時に指定したLayer、短押し時に指定したKeyが設定できます。  
-下の画像ですと、長押し時にLayer1になり、短押し時に"Y"が入力されます。  
-![](build_guide_soft/ZMK07.png)
+下の画像ですと、長押し時にLayer3になり、短押し時に"Esc"が入力されます。  
+![](build_guide_soft/2025-12-07-20-45-59.png)
 
 ### (2) ZMK Firmwareを使用する更新方法
 [MoooseFreeのZMK FirmwareのGithubリポジトリ](https://github.com/ataruno/zmk-MoooseFree)をForkしてください。  
 Github上でキーマップを編集しコミットすると、Github Action上でビルドされ書き込みファイルが生成されます。  
 
 ## Bluetooth接続の仕方
-初期のキーマップではBluetooth接続のレイヤーはLayerの4に設定しています。  
-また、タクトスイッチを押し続けるとLayer4になります。  
-![](build_guide_soft/ZMK08.png)
+デフォルトではデフォルトレイヤーの手前のタクトスイッチにプロファイルキーを用意しています。  
+![](build_guide_soft/2025-12-07-20-55-04.png)
 
 初めてソフトを書き込んだ時点では、どのBluetoothプロファイルも設定されていない状態です。  
-No1にPCを接続したい場合。  
-MoooseFreeのプロファイル1を選択(=タクトスイッチを押してレイヤ4にしながら右奥のスイッチを押す)。  
+プロファイル1でPCに接続したい場合。  
+MoooseFreeのプロファイル1を選択(=タクトスイッチを押す)。  
 Xiaoマイコンのインジケータが黄色(接続設定待ち状態=ペアリング待ち状態)になるはずです。  
-![](build_guide_soft/インジケータ黄色.jpg)
+![](build_guide_soft/インジケータ黄.jpg)
 
 次にPCのデバイスの追加からBluetooth接続機器を探し、MoooseFreeを接続してください。
-![](build_guide_soft/Bluetooth接続01.png)
+![](build_guide_soft/2025-12-07-20-59-30.png)
 
 MoooseFreeのインジケータが青色になれば無線接続状態です。  
 また、ペアリングした機器の電源が入っていない場合など接続していない場合は赤色が表示されます。  
-![](build_guide_soft/インジケータ青色.jpg)
+![](build_guide_soft/インジケータ青.jpg)
 
 
 ## セキュリティの話
