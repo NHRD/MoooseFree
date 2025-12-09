@@ -4,8 +4,8 @@
 以下にファイルを置きます。  
 https://github.com/ataruno/MoooseFree/tree/main/firmware
 
-25/12/07時点の最新はGithub Actions#32
-https://github.com/ataruno/MoooseFree/tree/main/firmware/MoooseFree_firmware_32
+25/12/10時点の最新はGithub Actions#45
+https://github.com/ataruno/MoooseFree/tree/main/firmware/MoooseFree_firmware_45
 
 各ファイルの解説です。  
 * 右手に書き込むのは"MoooseFree_right-seeeduino_xiao_ble-zmk.uf2"
