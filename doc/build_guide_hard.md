@@ -37,7 +37,7 @@
 | 表面実装ダイオード(1N4148W) | 112個             | https://shop.yushakobo.jp/products/a0800di-02-100?variant=37665574420641 |
 | タクトスイッチ<br>(6x6x5mm 2pin)| 18個             | https://shop.yushakobo.jp/products/a0800ts-02-1 |
 | ホットスワップ<br>(MX用orロープロファイル)|最大58個| https://shop.yushakobo.jp/products/a01ps?variant=37665172521121 |
-| キースイッチ<br>(MX互換orロープロファイル)|最大58個| ChockV1,V2に対応したフットプリントですが、当面ケースはMX互換向け |
+| キースイッチ<br>(MX互換orロープロファイル)|最大58個| ケースがVer2になりMX互換にもロープロファイルにも対応しました |
 | ロータリーエンコーダ<br>(軸形状:Dカット、おすすめ高さ17.5mm)| 任意(おすすめ2個) | https://shop.yushakobo.jp/products/3762?variant=46240750436583 |
 | リチウムイオンバッテリ<br>(※無線にする際の構成例)<br>45mm(横) x 28mm(縦) x 6mm(厚さ)より一回り小さいもの| 2個(左右1個ずつ)            | ・EEMBリチウムポリマー電池 3.7V 500 mAh<br>https://www.amazon.co.jp/dp/B09DPPMX14?ref_=ppx_hzsearch_conn_dt_b_fed_asin_title_1 <br>・EEMB リチウムポリマーバッテリー 3.7V 250mAh<br>https://www.amazon.co.jp/dp/B08FD3V6TF?psc=1&smid=A6AC39XNLAVZ4&ref_=chk_typ_imgToDp |
 
